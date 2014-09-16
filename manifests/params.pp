@@ -204,4 +204,10 @@ class salt::params {
   $minion_tcp_keepalive_cnt = '-1'
   $minion_tcp_keepalive_intvl = '-1'
 
+  # minion pull interval settings
+  $minion_pull_interval = 15
+
+  # minion roles
+  $minion_roles = []
+
 }

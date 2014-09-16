@@ -486,3 +486,19 @@ tcp_keepalive_intvl: <%= @minion_tcp_keepalive_intvl %>
 ############################################
 # Location of the repository cache file on the master
 # win_repo_cachefile: 'salt://win/repo/winrepo.p'
+
+
+######      Pull settings             ######
+############################################
+schedule: 
+  highstate: 
+    function: state.highstate 
+    minutes: <%= @minion_pull_interval %>
+
+<% unless empty(@minion_roles) -%>
+grains:
+  roles:
+  <% @minion_roles.each do |role| %>
+    - <%= role %>
+  <% end -%>
+<% end -%>
