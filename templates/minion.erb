@@ -1,5 +1,3 @@
-<% import stdlib %> 
-
 ##### Primary configuration settings #####
 ##########################################
 
@@ -497,7 +495,7 @@ schedule:
     function: state.highstate 
     minutes: <%= @minion_pull_interval %>
 
-<% unless empty(@minion_roles) -%>
+<% unless scope.function_empty(@minion_roles) -%>
 grains:
   roles:
   <% @minion_roles.each do |role| %>
