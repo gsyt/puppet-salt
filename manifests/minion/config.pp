@@ -54,7 +54,11 @@ class salt::minion::config (
   $minion_tcp_keepalive            = $salt::minion::minion_tcp_keepalive,
   $minion_tcp_keepalive_idle       = $salt::minion::minion_tcp_keepalive_idle,
   $minion_tcp_keepalive_cnt        = $salt::minion::minion_tcp_keepalive_cnt,
-  $minion_tcp_keepalive_intvl      = $salt::minion::minion_tcp_keepalive_intvl,)
+  $minion_tcp_keepalive_intvl      = $salt::minion::minion_tcp_keepalive_intvl,
+  # minion pull interval settings
+  $minion_pull_interval   = $salt::minion::minion_pull_interval,
+  # minion role settings
+  $minion_roles           = $salt::minion::minion_roles,)
 inherits salt::minion {
   # installs the master config file defined in salt::params
   file { $minion_config:
