@@ -18,3 +18,10 @@ _yardoc
 doc/
 /metadata.json
 /.project
+
+# RVM artifacts
+.ruby-version
+.rvm-gemset
+
+# Bundler artifacts
+Gemfile.lock
