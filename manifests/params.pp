@@ -5,6 +5,7 @@ class salt::params {
       $minion_config_manage = true
       $minion_config = '/etc/salt/minion'
       $minion_config_template = 'salt/minion.erb'
+      $minion_package_deps = 'libyaml'
       $minion_package_name = 'salt-minion'
       $minion_package_ensure = 'present'
       $minion_service_name = 'salt-minion'
@@ -15,6 +16,7 @@ class salt::params {
       $master_config_manage = true
       $master_config = '/etc/salt/master'
       $master_config_template = 'salt/master.erb'
+      $master_package_deps= 'libyaml'
       $master_package_name = 'salt-master'
       $master_package_ensure = 'present'
       $master_service_name = 'salt-master'

@@ -6,8 +6,9 @@ class salt::minion::install (
 salt::minion {
   if defined(Package[$salt::minion::minion_package_name]) == false {
     package { $salt::minion::minion_package_name: ensure =>
-      $salt::minion::minion_package_ensure, }
-
+      $salt::minion::minion_package_ensure }
+    package { $salt::minion::minion_package_deps: ensure =>
+      salt::minion::minion_package_ensure, }
   }
 
 }
